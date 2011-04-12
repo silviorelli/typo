@@ -17,9 +17,8 @@
   <%= link_to("edit", { :controller => "admin/content", :action => "edit", :id => @article },
         :class => "admintools", :style => "display: none", :id => "admin_article") %>
   <div class="post-title"><h1><%= @article.title %></h1></div>
-  <p class="auth">Posted by <%= author_link(@article) %>
-  <%= js_distance_of_time_in_words_to_now @article.created_at.utc %>
-<em><%= @article.created_at.strftime('%b') %><span><%= @article.created_at.day %></span></em>
+  <p class="auth">Scritto da <%= author_link(@article) %> <%= distance_of_time_in_words_to_now @article.created_at %> fa.
+	<em><%= @article.created_at.strftime('%b') %><span><%= @article.created_at.day %></span></em>
   </p>
   <div class="post-body"><%= @article.html(:body) %></div>
 </div>
@@ -42,7 +41,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   <a name="comments"></a><h4 class="blueblk">Comments</h4> 
 <% if @article.allow_comments? -%>
   <p class="postmetadata alt">
-    <small><a href="#respond">Leave a response</a></small>
+    <small><a href="#respond">Lascia un commento</a></small>
   </p>
 <% end -%>
   <%= content_tag(:ol, render(:partial => "comment", :collection => @article.comments), :id => 'commentList', :class => 'comment-list') %>
@@ -59,7 +58,8 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
 <p class="postmetadata alt">
   <small>
-  <a href="<%= url_for :controller => 'xml', :action=>'feed', :type=>'article', :format => 'atom', :id => @article %>">Atom feed for this post</a>
+  <a href="<%= url_for :controller => 'xml', :action=>'feed', :type=>'article', :format => 'atom', :id => @article %>">Atom feed per questo articolo</a>
+   - 
   <a href="<%= url_for :controller=>"articles", :action=>"trackback", :id=>@article.id %>">trackback uri</a>  
   </small>
 </p>

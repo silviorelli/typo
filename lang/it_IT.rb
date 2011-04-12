@@ -557,7 +557,7 @@ Localization.define("it_IT") do |l|
 
   # app/views/articles/archives.html.erb
   l.store "No articles found", "Nessun articolo trovato"
-  l.store "posted in", ""
+  l.store "posted in", "Postato in"
 
   # app/views/articles/comment_preview.html.erb
   l.store "is about to say", "sta per dire"

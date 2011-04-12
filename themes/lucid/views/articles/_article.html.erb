@@ -1,6 +1,5 @@
 <div class="post-title"><h1><%= link_to_permalink article, article.title %></h1></div>
-<p class="auth">Posted by <%= author_link(article) %>
-<%= js_distance_of_time_in_words_to_now article.created_at %>
+<p class="auth">Scritto da <%= author_link(article) %> <%= distance_of_time_in_words_to_now article.created_at %> fa.
 <em><%= article.created_at.strftime('%b') %><span><%= article.created_at.day %></span></em>
 </p>
 <div class="post-body">

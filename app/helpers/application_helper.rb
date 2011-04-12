@@ -26,7 +26,7 @@ module ApplicationHelper
   def comments_link(article)
     comment_count = article.published_comments.size
     # FIXME Why using own pluralize metchod when the Localize._ provides the same funciotnality, but better? (by simply calling _('%d comments', comment_count) and using the en translation: l.store "%d comments", ["No nomments", "1 comment", "%d comments"])
-    link_to_permalink(article,pluralize(comment_count, _('no comments'), _('1 comment'), _('%d comments', comment_count)),'comments')
+    link_to_permalink(article,pluralize(comment_count, 'Nessun commento', '1 commento', "#{comment_count} commenti"))
   end
 
   # wrapper for TypoPlugins::Avatar

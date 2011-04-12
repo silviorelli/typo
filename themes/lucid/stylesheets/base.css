@@ -249,6 +249,8 @@ address {
 	width: 100%;
 	height: auto;
 	text-align: left;
+	background: #EEEEEE;
+	padding-left: 20px;
 }
 #search-panel  {
 	position: relative;
